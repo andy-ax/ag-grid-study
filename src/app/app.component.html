@@ -1,0 +1,28 @@
+<div>
+  <ag-grid-angular
+    style="width: 500px; height: 500px;"
+    class="ag-theme-balham"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [pinnedTopRowData]="pinnedTopRowData"
+    [pinnedBottomRowData]="pinnedBottomRowData"
+    [rowHeight]="rowHeight"
+    [headerHeight]="headerHeight"
+    [gridOptions]="gridOption"
+
+    (gridReady)="onGridReady($event)"
+    (cellClicked)="onCellClick($event)"
+  >
+  </ag-grid-angular>
+  <input id="text" [(ngModel)]="text" type="text" />
+  <button (click)="setHeight($event, text)">修改高度</button>
+  <button (click)="resetRowData()">重设表单</button>
+  <br />
+  <input [(ngModel)]="value" type="text" />
+  <input [(ngModel)]="x" type="text" />
+  <input [(ngModel)]="y" type="text" />
+  <button (click)="changeCellData(x, y, value)">更改数据</button>
+  <br />
+  <input [(ngModel)]="rowIndex" type="text" />
+  <button (click)="removeRowData(rowIndex)">删除行</button>
+</div>
